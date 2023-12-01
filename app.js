@@ -18,4 +18,24 @@ increase.addEventListener('click', function () {
     num = num + 1;
     change();
     h1.innerHTML = num;
-}
+});
+
+reset.addEventListener('click', function () {
+
+    let btn = document.getElementById("increase");
+    num = 0;
+    change();
+
+    h1.innerHTML = num;
+
+});
+
+decrease.addEventListener('click', function () {
+
+    let btn = document.getElementById("decrease");
+    num = num - 1;
+
+    change();
+    h1.innerHTML = num;
+
+});
