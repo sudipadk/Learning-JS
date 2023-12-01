@@ -5,3 +5,31 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    /* margin-left: 150px; */
+    font-size: 64px;
+}
+
+button {
+    font-size: 24px;
+    height: 56px;
+    width: 80px;
+    padding: 10px;
+    margin: 4px;
+    background-color: #fcfbfb;
+    cursor: pointer;
+    border-radius: 8px;
+
+    color: black;
+}
+
+button:hover{
+    background-color: tomato;
+    color: white;
+
+}
