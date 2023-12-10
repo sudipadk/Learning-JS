@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/JavaScript/CSS/obj2Assign.css">
+    <title>My Routine</title>
+</head>
+
+
+<body>
+
+    <div class="ptime" id="ptime">
+        <h3>Time:&nbsp;&nbsp;&nbsp;</h3>
+        <h3 class="hour">:</h3>
+        <h3 class="minutes">:</h3>
+        <h3 class="seconds"></h3>
+    </div>
+
+    <div class="routine">
+        <table>
+            <tr class="heading">
+                <th>S.N</th>
+                <th>Program</th>
+                <th>Subject</th>
+
+                <th>Start Time</th>
+                <th>End Time</th>
+
+            </tr>
+            <tr class="row">
+                <td>1</td>
+                <td>B.C.A</td>
+
+                <td id="class">Numerical Method</td>
+                <td class="time-start">7:17</td>
+                <td class="time-end">7:20</td>
+
+            </tr>
+            <tr class="row">
+                <td>2</td>
+                <td>B.C.A</td>
+                <td id="class">Database Management System</td>
+                <td class="time-start">7:20</td>
+                <td class="time-end">8:09</td>
+
+            </tr>
+            <tr class="row">
+                <td>3</td>
+                <td>B.C.A</td>
+                <td id="class">Operating System</td>
+                <td class="time-start">8:10</td>
+                <td class="time-end">8:59</td>
+
+            </tr>
+            <tr class="row">
+                <td>4</td>
+                <td>B.C.A</td>
+                <td>Break Time</td>
+                <td class="time-start">9:00</td>
+                <td class="time-end">9:29</td>
+
+            </tr>
+            <tr class="row">
+                <td>5</td>
+                <td>B.C.A</td>
+                <td id="class">Scripting Language</td>
+                <td class="time-start">9:30</td>
+                <td class="time-end">9:50</td>
+
+            </tr>
+            <tr class="row">
+                <td>6</td>
+                <td>B.C.A</td>
+                <td id="class">Software Engineering</td>
+                <td class="time-start">10:00</td>
+                <td class="time-end">10:20</td>
+
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+
+<script>
+    const time = document.getElementById('ptime');
+    let rows = document.getElementsByClassName('row');
+    let subject= document.getElementsByTagName('class');
+
+
+    setInterval(function () {
+        let date = new Date();
+
+
+        let hours = date.getHours();
+        let hour = document.querySelector('.hour');
+        let minutes = document.querySelector('.minutes');
+        let seconds = document.querySelector('.seconds');
+
+        hour.innerHTML = `${date.getHours()}&nbsp;`;
+        minutes.innerHTML = `: ${date.getMinutes()}&nbsp;`;
+        seconds.innerHTML = `: ${date.getSeconds()}&nbsp;`;
+
+
+        for (let i = 0; i < rows.length; i++) {
+            const element = rows[i];
+
+            let startTime = rows[i].querySelector('.time-start').innerHTML;
+            let endTime = rows[i].querySelector('.time-end').innerHTML;
+
+            let startHour = `${date.getHours()}:`;
+            let endHour = `${date.getHours()}`;
+
+            let startminute = `${date.getMinutes()}`;
+            let endminute = `${date.getMinutes()}`;
+
+            let finalTime = startHour + startminute;
+
+            if (finalTime >= startTime && finalTime <= endTime) {
+                rows[i].style.backgroundColor = 'green'; // Change the color to green when the condition is met
+                console.log( `${subject}Class hudai xa hai..`);
+            } else {
+                rows[i].style.backgroundColor = 'burlywood'; // Reset the color if the condition is not met
+            }
+        }
+    }, 1000);
+
+
+</script>
+
+</html>
